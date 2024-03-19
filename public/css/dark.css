@@ -1,0 +1,50 @@
+:root{
+
+    --background-color: #252525;
+    --color-dark: #dd6600;
+    --color: #ffaa00;
+    --color-light: #887755;
+
+    --font-size-x-large: 20pt;
+    --font-size-large: 16pt;
+    --font-size-normal: 12pt;
+    --font-size-small: 10pt;
+    --font-size-x-small: 8pt;
+
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--color);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    color: var(--color-dark)
+}
+main {
+    min-height:75vh;
+}
+
+#timer {
+    display: flex;
+    font-size: 25vw;
+    align-items : center;
+}
+
+#minutes{
+}
+#separator{
+    font-size: 15vw;
+    padding:2vw;
+    vertical-align: middle;
+}
+#minutes{
+}
+footer{
+    color: var(--color-light);
+    font-size: var( --font-size-x-small);
+}
