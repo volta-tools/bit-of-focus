@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>A Bit of Focus</title>
-    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/assets/css/dark.css">
 </head>
 <body>
 
     <header>
         <h1>A Bit of Focus</h1>
+        <p class="subtitle">Wednesday 2024.03.20</p>
     </header>
 
     <main>
-
         <div id="timer">
             <div id="minutes">00</div>
             <div id="separator">:</div>
             <div id="seconds">00</div>
         </div>
+
+        <div id="timeSliceHero">
+
+        </div>
+
     </main>
 
 
@@ -29,7 +34,20 @@
     </footer>
 
 
-<script src="js/app.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+
+    async function getapi(url)
+    {
+        const response = await fetch(url);
+        var data = await response.json();
+        console.log(data);
+
+    }
+
+     getapi('https://zenquotes.io/api/today');
+
+</script>
 
 </body>
 </html>

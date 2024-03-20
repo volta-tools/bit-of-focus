@@ -44,6 +44,14 @@ main {
 }
 #minutes{
 }
+
+
+#timeSliceHero{
+    min-height: 20vh;
+    background-color: #887755;
+    opacity: 0.1;
+}
+
 footer{
     color: var(--color-light);
     font-size: var( --font-size-x-small);
