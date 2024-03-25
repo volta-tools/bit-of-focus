@@ -1,0 +1,37 @@
+{
+    "startHour": 9,
+    "startMinute": 30,
+    "startMessage": "pending",
+    "endMessage" : "stopped",
+    "sequence":[
+        { "duration": 25, "description": "Focus(1)!", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 30, "description": "Focus(2)!", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 25, "description": "Focus(3)", "type":1, "audioFile": "/assets/audio/simple-notification.mp3" },
+
+        { "duration":  15, "description": "Medium Break",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "duration": 35, "description": "Focus(4)!", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 35, "description": "Focus(5 bijna pauze)!",  "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "duration": 30, "description": "Eat, go out", "type":3, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "duration": 25, "description": "Focus(6)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 25, "description": "Focus(7)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+
+
+        { "duration": 25, "description": "Focus(8)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 25, "description": "Focus(9)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 25, "description": "Focus(10)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 25, "description": "FOCUSSSSS<br><img  src=\"/assets/images/icon-192x192.png\" alt=\"\">", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"}
+    ]
+}

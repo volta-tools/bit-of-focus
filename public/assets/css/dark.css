@@ -1,6 +1,13 @@
+
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
+
 :root{
 
+    --body-font-family: "Nunito", sans-serif;
+
     --background-color: #252525;
+    --background-color-trans: #88775555;
+
     --color-dark: #dd6600;
     --color: #ffaa00;
     --color-light: #887755;
@@ -20,39 +27,104 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: var(--body-font-family);;
+    font-size: 1rem;
+    min-height: 100vh;
+
 }
 
-h1{
-    color: var(--color-dark)
+a, a:active, a:visited{
+    color: var(--color);
+    text-decoration: none;
+    padding: 0 5px 0 5px;
 }
+a:hover{
+    border-bottom: 1px solid var(--color-dark);
+}
+
+header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:20vh;
+}
+
+
+header > h1 {
+    color: var(--color-dark);
+    margin: 10px 0 0 0 ;
+}
+header > h1 > img {
+  vertical-align: baseline;
+}
+
+header > p {
+    font-size:var(--font-size-x-small);
+    text-align:center;
+    margin:0;
+}
+
+header > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header > nav > ul {
+    list-style: none;
+    display: flex;
+    margin:0; padding:0;
+}
+header > nav > ul > li {
+    margin : 0 1rem 0 0;
+    padding:0;
+}
+
 main {
-    min-height:75vh;
+    height:60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #timer {
-    display: flex;
-    font-size: 25vw;
-    align-items : center;
+    height: 20vh;
+    font-size: 8vw;
+    display: table-row;
+    align-self: center;
 }
-
-#minutes{
-}
-#separator{
-    font-size: 15vw;
-    padding:2vw;
+#timer:first-child{
+    text-align: center;
+    display:table-cell;
     vertical-align: middle;
 }
-#minutes{
+
+#timer > p {
+    font-size: var(--font-size-x-small);
+    margin: 0;
+}
+
+#timerMessage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-dark);
+    background-color: var(--background-color-trans);
+    padding:20px;
+    border-radius: 20px;
 }
 
 
-#timeSliceHero{
-    min-height: 20vh;
-    background-color: #887755;
-    opacity: 0.1;
-}
 
+#timerMessage img {
+    height: 40vh;
+    align-self: center;
+}
 footer{
+    margin-top: auto;
     color: var(--color-light);
-    font-size: var( --font-size-x-small);
+    font-size: var(--font-size-x-small);
+    height: 60px;
+
 }
