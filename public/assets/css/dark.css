@@ -2,22 +2,17 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
 
 :root{
-
     --body-font-family: "Nunito", sans-serif;
-
     --background-color: #252525;
     --background-color-trans: #88775555;
-
     --color-dark: #dd6600;
     --color: #ffaa00;
     --color-light: #887755;
-
     --font-size-x-large: 20pt;
     --font-size-large: 16pt;
     --font-size-normal: 12pt;
     --font-size-small: 10pt;
     --font-size-x-small: 8pt;
-
 }
 
 body{
@@ -43,13 +38,24 @@ a:hover{
 }
 
 header{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height:20vh;
 }
 
+header > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > nav > ul {
+    list-style: none;
+    display: flex;
+    margin:0; padding:0;
+}
+
+header > nav > ul > li {
+    margin : 0 1rem 0 0;
+    padding:0;
+}
 
 header > h1 {
     color: var(--color-dark);
@@ -62,46 +68,18 @@ header > h1 > img {
 header > p {
     font-size:var(--font-size-x-small);
     text-align:center;
-    margin:0;
-}
-
-header > nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header > nav > ul {
-    list-style: none;
-    display: flex;
-    margin:0; padding:0;
-}
-header > nav > ul > li {
-    margin : 0 1rem 0 0;
-    padding:0;
 }
 
 main {
-    height:60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 #timer {
-    height: 20vh;
-    font-size: 8vw;
+    font-size: 12vw;
     display: table-row;
     align-self: center;
-}
-#timer:first-child{
-    text-align: center;
-    display:table-cell;
-    vertical-align: middle;
-}
-
-#timer > p {
-    font-size: var(--font-size-x-small);
-    margin: 0;
 }
 
 #timerMessage{
@@ -115,12 +93,12 @@ main {
     border-radius: 20px;
 }
 
-
-
-#timerMessage img {
+#timerMessage img,
+#timerMessage iframe {
     height: 40vh;
     align-self: center;
 }
+
 footer{
     margin-top: auto;
     color: var(--color-light);

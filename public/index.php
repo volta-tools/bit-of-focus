@@ -38,10 +38,12 @@ switch ($uri)
         header("Content-type: application/json; charset=utf-8");
         $file = DIR_APP_ROOT . 'controllers/config-'.date('Ymd').'.json';
         if (is_file($file)) {
-            echo file_get_contents( $file);
+            $json = file_get_contents( $file);
         } else {
-            echo file_get_contents(DIR_APP_ROOT . 'controllers/config.json');
+            $json =  file_get_contents(DIR_APP_ROOT . 'controllers/config.json');
         }
+
+        echo $json;
         break;
 
     /*
