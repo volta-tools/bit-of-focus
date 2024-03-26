@@ -1,13 +1,17 @@
 # A Bit of Focus
 
-A simple pomodoro timer as a SPA PWA. It is aimed to be displayed on a bigger screen to be used in classrooms. Randomly displays pictures or phrases during breaks and pomodoro's.
+A straightforward Pomodoro timer designed as a Single Page Application Progressive Web App (SPA PWA). It's intended for larger screens and is ideal for classroom use. It randomly showcases images or quotes during both breaks and Pomodoro sessions.
 
-Can be configuration through a json file which will be dynamically included.
+Configuration is possible via a dynamically included JSON file.
 
-Configuration includes:
+Configuration options comprise:
 
-* background image
-* stylesheet
-* sequence of pomodoro's and breaks for the current day
-* start time to start the first pomodoro in the sequence
-* sounds for starting, ending pomodoro's or breaks
+* Sequence of Pomodoros and breaks for the current day
+* Initial start time for the first Pomodoro in the sequence
+* Sounds for initiating and concluding Pomodoros or breaks
+* Adding HTML content to any segment
+
+
+Have fun, 
+
+Regards Rob
