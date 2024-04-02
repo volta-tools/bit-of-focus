@@ -36,11 +36,11 @@ switch ($uri)
      */
     case '/api/v1/config';
         header("Content-type: application/json; charset=utf-8");
-        $file = DIR_APP_ROOT . 'controllers/config-'.date('Ymd').'.json';
+        $file = DIR_CONFIG . 'config-'.date('Ymd').'.json';
         if (is_file($file)) {
             $json = file_get_contents( $file);
         } else {
-            $json =  file_get_contents(DIR_APP_ROOT . 'controllers/config.json');
+            $json =  file_get_contents(DIR_CONFIG . 'config.json');
         }
 
         echo $json;

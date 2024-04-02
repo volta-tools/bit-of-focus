@@ -5,23 +5,23 @@
     "endMessage" : "stopped",
     "sequence":[
 
-            { "duration":  60, "description": "Pending<iframe src=\"https://giphy.com/embed/HLB0nLA36GCCo6JuB5\" width=\"480\" height=\"480\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p><a href=\"https://giphy.com/gifs/scaler-official-funny-cartoon-coding-HLB0nLA36GCCo6JuB5\">via GIPHY</a></p>",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+            { "duration":  60, "description": "Pending, Start at 9:30<iframe src=\"https://giphy.com/embed/HLB0nLA36GCCo6JuB5\" width=\"480\" height=\"480\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p><a href=\"https://giphy.com/gifs/scaler-official-funny-cartoon-coding-HLB0nLA36GCCo6JuB5\">via GIPHY</a></p>",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
 
         { "duration": 25, "description": "Focus(1)!", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
         { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
         { "duration": 30, "description": "Focus(2)!", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
         { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "duration": 25, "description": "Focus(3)", "type":1, "audioFile": "/assets/audio/simple-notification.mp3" },
+        { "duration": 25, "description": "Focus(hierna een korte pauze)", "type":1, "audioFile": "/assets/audio/simple-notification.mp3" },
 
            { "duration":  15, "description": "Medium Break",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
 
         { "duration": 35, "description": "Focus(4)!", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
         { "duration": 5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "duration": 35, "description": "Focus(5 bijna pauze)!",  "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 35, "description": "Focus(Hierna Lunch)!",  "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
 
             { "duration": 45, "description": "Eat, go out", "type":3, "audioFile": "/assets/audio/simple-notification.mp3"},
 
-        { "duration": 35, "description": "Focus(6)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 35, "description": "Focus(6)!<iframe src=\"https://giphy.com/embed/yYSSBtDgbbRzq\" width=\"480\" height=\"360\" frameBorder=\"0\" ></iframe><p><a href=\"https://giphy.com/gifs/frustrated-annoyed-programming-yYSSBtDgbbRzq\">via GIPHY</a></p>", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
         { "duration":  5, "description": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
         { "duration": 35, "description": "Focus(7)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
 
