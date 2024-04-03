@@ -93,6 +93,11 @@ main {
     border-radius: 20px;
 }
 
+#timerMessage .small {
+    font-size: 10pt;
+    margin:0 0 20px 0;
+}
+
 #timerMessage img,
 #timerMessage iframe {
     height: 40vh;

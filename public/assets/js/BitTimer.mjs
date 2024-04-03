@@ -1,5 +1,73 @@
 "use strict";
 
+class BitConfig{
+
+
+    /**
+     * The Hour the first lice will start
+     * @type {number}
+     */
+    startHour= 8;
+
+    /**
+     * The minute the first slice wil start
+     * @type {number}
+     */
+    startMinute = 30;
+
+    /**
+     * The message to be displayed before the first lice is started
+     * @type {string}
+     */
+    startMessage = "Please wait before we start the bit timer";
+
+    /**
+     * The message to be displayed after the last lice is stopped
+     * @type {string}
+     */
+    endMessage =  "stopped";
+
+    /**
+     * Collection of slices
+     * @type {[{BitTimerSlice}]}
+     */
+    sequence = [];
+
+}
+
+
+class BitTimerSlice
+{
+    /**
+     * The time in minutes of the slice, defaults to 25
+     * @type {number}
+     */
+    duration = 25;
+
+    /**
+     * The message to be displayed when the slice is active.
+     * @type {string}
+     */
+    message = "Focus ";
+
+    /**
+     * 0 = Pending/Unspecified
+     * 1 = Pomodoro
+     * 2 = Short break
+     * 3 = Medium break
+     * 4 = Long break
+     * @type {number}
+     */
+    type = 0;
+
+    /**
+     * URL to an audio file. Will be played at slice startup
+     * @type {string}
+     */
+    audioFile = "/assets/audio/simple-notification.mp3"
+
+}
+
 
 /**
  * The main class
@@ -7,21 +75,37 @@
 class BitTimer
 {
 
+
     /**
      * Internal copy of the current timer config
      * @type {{}}
      */
     #_config = {};
 
+    /**
+     * > 0 counting up,
+     * <= 0 counting down
+     * @type {number}
+     */
+    countDirection = -1;
 
+    /**
+     * The ID of the HTML element to display the timer
+     * @type {string}
+     */
     timerElementId = "timer";
+
+    /**
+     * The ID of the HTML element to display the slice message in
+     * @type {string}
+     */
     timerMessageElementId = "timerMessage";
 
     /**
      * Initializes internal values
      *
-     * @param config
-     * @param elementId
+     * @param {BitConfig} config
+     * @param {string} elementId
      */
     constructor(config, elementId) {
         this.#_config = config;
@@ -73,13 +157,15 @@ class BitTimer
                 }
 
                 // print the time left for the current slice
-                this.timerElement.innerHTML =
-                    `${this.secondsToTime(timeCounter-elapse)}
-                   `;
+                if (this.countDirection > 0 ) {
+                    this.timerElement.innerHTML =  `${this.secondsToTime(timeCounter-elapse)} `;
+                } else {
+                    this.timerElement.innerHTML =  `${this.secondsToTime((this.sequence[sliceIndex].duration * 60) - (timeCounter - elapse))} `;
+                }
 
+                // print the slice message only once
                 if (this.currentSliceIndex < sliceIndex ) {
                     this.currentSliceIndex = sliceIndex;
-
                     console.debug(`New Slice Index ${this.currentSliceIndex}`);
                     if (this.sequence[sliceIndex].audioFile) {
                         let audio = new Audio(this.sequence[sliceIndex].audioFile);
@@ -90,12 +176,27 @@ class BitTimer
                         });
                     }
 
+                    let sliceType = 'Unknown Slice Type'
+                    switch(this.sequence[sliceIndex].type) {
+                        case 0: sliceType = 'Idle'; break;
+                        case 1: sliceType = 'Pomodoro'; break;
+                        case 2: sliceType = 'Short break'; break;
+                        case 3: sliceType = 'Medium break'; break;
+                        case 4: sliceType = 'Long Break'; break;
+                        default: sliceType = 'Unknown Slice Type';
+                    }
                     this.timeMessageElement.innerHTML = `
-                     <p>
-                      <strong>slice:</strong> ${sliceIndex+1}/ ${this.sequence.length},<br> 
-                      <strong>duration:</strong> ${this.sequence[sliceIndex].duration} m./ ${this.sequenceTotal/60} m. 
-                    </p>
-                    ${this.sequence[sliceIndex].description}`;
+                         <h2>${sliceType}</h2>
+                         <p class="small" ><strong>slice:</strong> ${sliceIndex + 1}/ ${this.sequence.length},<br> 
+                          <strong>duration:</strong> ${this.sequence[sliceIndex].duration} m./ ${this.sequenceTotal / 60} m. </p>`;
+
+                    if (this.sequence[sliceIndex].message === '') {
+                        fetch("/api/v1/random")
+                            .then(response => response.json())
+                            .then(data => {
+                                 this.timeMessageElement.innerHTML +=  data.message
+                            });
+                    }
                 }
             }
             setTimeout(showCountDown, 500);
@@ -134,7 +235,7 @@ class BitTimer
 
     /**
      * Returns the number of seconds since startTime (will be negative if not started yet)
-     * @returns int
+     * @returns {int}
      */
     getTimeCounter()
     {

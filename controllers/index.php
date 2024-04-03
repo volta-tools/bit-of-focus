@@ -35,7 +35,7 @@
             </ul>
         </nav>
         <h1><img src="/assets//images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
-        <p>Wednesday 2024.03.20</p>
+        <p><?php echo date('Y m d') ?></p>
     </header>
 
     <main>

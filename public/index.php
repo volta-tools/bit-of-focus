@@ -32,6 +32,14 @@ switch ($uri)
 
 
     /*
+     * returns a json with a random slice message
+     */
+    case '/api/v1/random';
+        header("Content-type: application/json;  charset=utf-8");
+        include DIR_CONTROLLERS . 'random.php';
+        break;
+
+    /*
      * returns a json file with configuration settings for this day
      */
     case '/api/v1/config';
