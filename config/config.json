@@ -20,19 +20,19 @@
            { "duration":  15, "message": "",  "type":3, "audioFile": "/assets/audio/simple-notification.mp3"},
 
         { "duration": 35, "message": "", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "duration": 5, "message": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "duration": 35, "message": "Focus(Hierna Lunch)!",  "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 5, "message": "",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 35, "message": "",  "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
 
-            { "duration": 45, "message": "Eat, go out", "type":4, "audioFile": "/assets/audio/simple-notification.mp3"},
+            { "duration": 45, "message": "Eat, go out<img src=\"/assets/images/funny-skeleton-eating-deadly-junk-food.jpg\">", "type":4, "audioFile": "/assets/audio/simple-notification.mp3"},
 
         { "duration": 35, "message": "", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "duration":  5, "message": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "duration": 35, "message": "Focus(7)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "message": "",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 35, "message": "", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
 
             { "duration":  15, "message": "Short Break 2",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
 
-        { "duration": 30, "message": "Focus(8)!", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "duration":  5, "message": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration": 30, "message": "", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "duration":  5, "message": "",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
         { "duration": 30,
             "message": "Laatste FOCUSSSSS<iframe src=\"https://giphy.com/embed/yYSSBtDgbbRzq\" width=\"480\" height=\"360\" frameBorder=\"0\" ></iframe><p><a href=\"https:\/\/giphy.com/gifs/frustrated-annoyed-programming-yYSSBtDgbbRzq\">via GIPHY</a></p>",
             "type": 1,

@@ -31,7 +31,7 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li>About</li>
+                <li><a href="/about">About</a></li>
             </ul>
         </nav>
         <h1><img src="/assets//images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
@@ -50,6 +50,10 @@
     <script src="/assets/js/app.js"></script>
     <script type="module">
         import  BitTimer from "/assets/js/BitTimer.mjs";
+        import  RandomQuote from "/assets/js/RandomQuote.mjs";
+
+        customElements.define("random-quote", RandomQuote, { extends: "blockquote" });
+
         fetch('/api/v1/config').then((result) => {
             result.json().then((config) => {
                 console.debug( config );
@@ -61,6 +65,9 @@
         }).catch(error => {
             console.debug("Failed to fetch", error);
         });
+
+
+
     </script>
 
 </body>

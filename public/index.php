@@ -25,14 +25,23 @@ switch ($uri)
 
     /*
      * Home page
+     * @uri /
      */
     case '/';
         require_once DIR_CONTROLLERS . 'index.php';
         break;
 
+    /*
+     * @uri /about
+     */
+    case '/about':
+        require_once DIR_CONTROLLERS . 'about.php';
+        break;
 
     /*
      * returns a json with a random slice message
+     *
+     * @uri /api/v1/rando
      */
     case '/api/v1/random';
         header("Content-type: application/json;  charset=utf-8");
@@ -41,6 +50,7 @@ switch ($uri)
 
     /*
      * returns a json file with configuration settings for this day
+     * @uri /api/v1/config
      */
     case '/api/v1/config';
         header("Content-type: application/json; charset=utf-8");
@@ -50,7 +60,6 @@ switch ($uri)
         } else {
             $json =  file_get_contents(DIR_CONFIG . 'config.json');
         }
-
         echo $json;
         break;
 
@@ -60,6 +69,8 @@ switch ($uri)
     default:
         header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
         echo "<strong>$uri</strong> not found";
+        exit(1);
 }
-exit();
+
+exit(0);
 

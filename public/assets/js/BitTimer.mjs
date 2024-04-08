@@ -191,11 +191,17 @@ class BitTimer
                           <strong>duration:</strong> ${this.sequence[sliceIndex].duration} m./ ${this.sequenceTotal / 60} m. </p>`;
 
                     if (this.sequence[sliceIndex].message === '') {
+                        console.log('adding random quote');
                         fetch("/api/v1/random")
                             .then(response => response.json())
                             .then(data => {
                                  this.timeMessageElement.innerHTML +=  data.message
                             });
+
+                        //this.timeMessageElement.innerHTML +=  '<random-quote></random-quote>';
+
+                    } else {
+                        this.timeMessageElement.innerHTML +=  this.sequence[sliceIndex].message;
                     }
                 }
             }
