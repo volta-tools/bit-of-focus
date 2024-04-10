@@ -1,2 +1,5 @@
 __*
 .idea
+node_modules
+vendor
+build
