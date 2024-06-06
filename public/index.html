@@ -7,19 +7,19 @@
     <title>A Bit of Focus</title>
     <link rel="stylesheet" href="/assets/css/dark.css">
     <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32x32.png">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- ios support -->
     <link rel="apple-touch-icon" href="/assets/images/icon-32x32.png" />
-    <link rel="apple-touch-icon" href="/images/icon-72x72.png" />
-    <link rel="apple-touch-icon" href="/images/icon-96x96.png" />
-    <link rel="apple-touch-icon" href="/images/icon-128x128.png" />
-    <link rel="apple-touch-icon" href="/images/icon-144x144.png" />
-    <link rel="apple-touch-icon" href="/images/icon-152x152.png" />
-    <link rel="apple-touch-icon" href="/images/icon-192x192.png" />
-    <link rel="apple-touch-icon" href="/images/icon-512x512.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="/assets/images/icon-512x512.png" />
 
     <meta name="apple-mobile-web-app-status-bar" content="#ffaa00" />
     <meta name="theme-color" content="#ffaa00" />
@@ -28,13 +28,7 @@
 <body>
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-            </ul>
-        </nav>
-        <h1><img src="/assets//images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
+        <h1><img src="/assets/images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
         <p><?php echo date('Y m d') ?></p>
     </header>
 
@@ -54,7 +48,7 @@
 
         customElements.define("random-quote", RandomQuote, { extends: "blockquote" });
 
-        fetch('/api/v1/config').then((result) => {
+        fetch('/api/v1/config.json').then((result) => {
             result.json().then((config) => {
                 console.debug( config );
                 const CLOCK = new BitTimer(config);

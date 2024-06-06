@@ -105,9 +105,8 @@ class BitTimer
      * Initializes internal values
      *
      * @param {BitConfig} config
-     * @param {string} elementId
      */
-    constructor(config, elementId) {
+    constructor(config ) {
         this.#_config = config;
 
         this.sequence = this.#_config.sequence ?? {};
