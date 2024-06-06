@@ -1,10 +1,10 @@
 const staticCache = "BitAcademyFocusTimer"
 const assets = [
-    "/",
-    "/assets//css/style.css",
-    "/assets/js/app.js",
-    "/assets/images/icon-16x16.png",
-    "/images/icon-32x32.png",
+    "./index.html",
+    "./assets//css/style.css",
+    "./assets/js/app.js",
+    "./assets/images/icon-16x16.png",
+    "./images/icon-32x32.png",
 ]
 
 self.addEventListener("install", installEvent => {
