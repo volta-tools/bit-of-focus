@@ -119,7 +119,7 @@ class BitTimer
             this.sequenceTotal += slice.duration * 60;
         })
         this.currentSliceIndex = -1;
-        console.debug("Total time of the sequence = ", this.sequenceTotal, "s. = ", this.sequenceTotal / 60 , " m. = ", this.sequenceTotal / 60 / 60, " h.");
+        // console.debug("Total time of the sequence = ", this.sequenceTotal, "s. = ", this.sequenceTotal / 60 , " m. = ", this.sequenceTotal / 60 / 60, " h.");
     }
 
     start() {
@@ -165,7 +165,7 @@ class BitTimer
                 // print the slice message only once
                 if (this.currentSliceIndex < sliceIndex ) {
                     this.currentSliceIndex = sliceIndex;
-                    console.debug(`New Slice Index ${this.currentSliceIndex}`);
+                    // console.debug(`New Slice Index ${this.currentSliceIndex}`);
                     if (this.sequence[sliceIndex].audioFile) {
                         let audio = new Audio(this.sequence[sliceIndex].audioFile);
                         audio.play().then( () => {
@@ -190,15 +190,12 @@ class BitTimer
                           <strong>duration:</strong> ${this.sequence[sliceIndex].duration} m./ ${this.sequenceTotal / 60} m. </p>`;
 
                     if (this.sequence[sliceIndex].message === '') {
-                        console.log('adding random quote');
-                        fetch("/api/v1/random")
+                        fetch("./api/v1/random.json")
                             .then(response => response.json())
                             .then(data => {
-                                 this.timeMessageElement.innerHTML +=  data.message
+                                let quote = data.quotes[(Math.floor(Math.random() * data.quotes.length))];
+                                this.timeMessageElement.innerHTML +=  quote
                             });
-
-                        //this.timeMessageElement.innerHTML +=  '<random-quote></random-quote>';
-
                     } else {
                         this.timeMessageElement.innerHTML +=  this.sequence[sliceIndex].message;
                     }
