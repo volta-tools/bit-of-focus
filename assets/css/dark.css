@@ -76,6 +76,31 @@ main {
     justify-content: center;
 }
 
+#triggerNotificationButton {
+    border:0; background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+
+}
+#alert {
+    font: 14px Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    border: 1px solid lightgray;
+    box-shadow: 3px 3px 12px lightgray;
+
+    &p { margin: 12px; }
+    & .buttons {
+        float: right
+    }
+
+}
+
+
+
 #timer {
     font-size: 12vw;
     display: table-row;

@@ -27,14 +27,26 @@
 </head>
 <body>
 
+
+    <div id="alert">
+        <p>This webpage would like to play sounds</p>
+        <p class="buttons">
+            <button value="0">Block</button>
+            <button value="1">Allow</button>
+        </p>
+    </div>
+
+
+
     <header>
-        <h1><img src="assets/images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
-        <p><?php echo date('Y m d') ?></p>
+        <h1><a href="https://volta-tools.github.io/bit-of-focus/"><img src="assets/images/icon-32x32.png" alt="logo"></a> A Bit of Focu<button id="triggerNotificationButton">s</button></h1>
     </header>
 
     <main>
         <div id="timer"></div>
         <div id="timerMessage"></div>
+
+
     </main>
 
     <footer>
@@ -46,6 +58,34 @@
     <script src="assets/js/app.js"></script>
     <script type="module">
         import  BitTimer from "./assets/js/BitTimer.mjs";
+
+        const audio = new Audio( '/assets/audio/simple-notification.mp3' );
+        const alertElement = document.getElementById( 'alert' );
+        audio.muted = true;
+        audio.play().then( () => {
+            alertElement.remove();   // already allowed
+            resetAudio();
+        }).catch( () => {
+            // need user interaction
+            alertElement.addEventListener( 'click', ({ target }) => {
+                if( target.matches('button') ) {
+                    const allowed = target.value === "1";
+                    if( allowed ) audio.play().then( resetAudio );
+                    alertElement.remove();
+                }
+            });
+        });
+
+        document.getElementById( 'triggerNotificationButton' ).addEventListener( 'click', (e) => {
+            if( audio.muted )   console.log( 'silent notification' );
+            else  audio.play();
+        } );
+
+        function resetAudio() {
+            audio.pause();
+            audio.currentTime = 0;
+            audio.muted = false;
+        }
 
         fetch('api/v1/config.json').then((result) => {
             result.json().then((config) => {

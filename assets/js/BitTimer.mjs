@@ -4,7 +4,7 @@ class BitConfig{
 
 
     /**
-     * The Hour the first lice will start
+     * The Hour the first slice will start
      * @type {number}
      */
     startHour= 8;
@@ -16,13 +16,13 @@ class BitConfig{
     startMinute = 30;
 
     /**
-     * The message to be displayed before the first lice is started
+     * The message to be displayed before the first slice is started
      * @type {string}
      */
     startMessage = "Please wait before we start the bit timer";
 
     /**
-     * The message to be displayed after the last lice is stopped
+     * The message to be displayed after the last slice is stopped
      * @type {string}
      */
     endMessage =  "stopped";
@@ -122,6 +122,9 @@ class BitTimer
         // console.debug("Total time of the sequence = ", this.sequenceTotal, "s. = ", this.sequenceTotal / 60 , " m. = ", this.sequenceTotal / 60 / 60, " h.");
     }
 
+    /**
+     * Starts the game loop.
+     */
     start() {
         let showCountDown = ()=> {
             let timeCounter = this.getTimeCounter();
