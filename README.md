@@ -12,6 +12,8 @@ Configuration options comprise:
 * Adding HTML content to any segment
 
 
+Go to [https://volta-tools.github.io/bit-of-focus/](https://volta-tools.github.io/bit-of-focus/) to see it action.
+
 Have fun, 
 
 Regards Rob
