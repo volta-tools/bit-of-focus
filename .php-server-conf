@@ -1,5 +1,0 @@
-php-server[verbose] = true
-php-server[host] = localhost
-php-server[port] = 9090
-php-server[root] = "public"
-php-server[file] = "index.html"
