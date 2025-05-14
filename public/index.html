@@ -29,7 +29,7 @@
 
     <header>
         <h1><img src="/assets/images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
-        <p><?php echo date('Y m d') ?></p>
+        <p id="currentDate"></p>
     </header>
 
     <main>
@@ -60,6 +60,19 @@
             console.debug("Failed to fetch", error);
         });
 
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            const dateElement = document.getElementById('currentDate');
+            const toDay = new Date()
+            dateElement.innerHTML = toDay.toDateString();
+
+            console.log( Date.now(), dateElement);
+        })
+
+        addEventListener("beforeinstallprompt", (event) => {
+            alert('install?')
+        })
 
 
     </script>
