@@ -1,5 +1,7 @@
 "use strict";
 
+import {RandomQuote} from "./RandomQuote.mjs";
+
 class BitConfig{
 
 
@@ -167,11 +169,11 @@ class BitTimer
                     this.currentSliceIndex = sliceIndex;
                     console.debug(`New Slice Index ${this.currentSliceIndex}`);
                     if (this.sequence[sliceIndex].audioFile) {
-                        let audio = new Audio(this.sequence[sliceIndex].audioFile);
-                        audio.play().then( () => {
+                        const audio = new Audio(this.sequence[sliceIndex].audioFile);
+                        audio.play().then(() => {
                             console.debug('Audio played')
-                        } ).catch(error => {
-                            console.debug('Audio failed', error)
+                        }).catch(error => {
+                            console.debug("Failed to play audio:", error.message)
                         });
                     }
 
@@ -191,13 +193,8 @@ class BitTimer
 
                     if (this.sequence[sliceIndex].message === '') {
                         console.log('adding random quote');
-                        fetch("/api/v1/random")
-                            .then(response => response.json())
-                            .then(data => {
-                                 this.timeMessageElement.innerHTML +=  data.message
-                            });
+                        RandomQuote().then(q =>  this.timeMessageElement.innerHTML += `<blockquote>${q.text}<cite>${q.author}</cite></blockquote>` )
 
-                        //this.timeMessageElement.innerHTML +=  '<random-quote></random-quote>';
 
                     } else {
                         this.timeMessageElement.innerHTML +=  this.sequence[sliceIndex].message;

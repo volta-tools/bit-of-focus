@@ -26,9 +26,8 @@
 
 </head>
 <body>
-
     <header>
-        <h1><img src="assets/images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
+        <h1><img id="logo" src="assets/images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
         <p id="currentDate"></p>
     </header>
 
@@ -39,14 +38,15 @@
 
     <footer>
         &copy; copyright 2024
+
     </footer>
 
-    <script src="assets/js/app.js"></script>
+<!--    <script src="assets/js/app.js"></script>-->
     <script type="module">
-        import  BitTimer from "./assets/js/BitTimer.mjs";
-        import  RandomQuote from "./assets/js/RandomQuote.mjs";
+        import BitTimer from "./assets/js/BitTimer.mjs";
+        import RandomQuoteElement from "./assets/js/RandomQuote.mjs";
 
-        customElements.define("random-quote", RandomQuote, { extends: "blockquote" });
+        customElements.define("random-quote", RandomQuoteElement );
 
         fetch('api/v1/config.json').then((result) => {
             result.json().then((config) => {
@@ -60,19 +60,27 @@
             console.debug("Failed to fetch", error);
         });
 
-
         document.addEventListener('DOMContentLoaded', (event) => {
-
             const dateElement = document.getElementById('currentDate');
             const toDay = new Date()
             dateElement.innerHTML = toDay.toDateString();
 
-            console.log( Date.now(), dateElement);
+            const logo = document.getElementById("logo")
+            logo.addEventListener("click", event => {
+                const audio = new Audio('assets/audio/simple-notification.mp3');
+                audio.play().then(() => {
+                    console.debug('Audio Enabled')
+                }).catch(error => {
+                    console.debug("Failed to play audio:", error.message)
+                });
+            })
         })
 
-        addEventListener("beforeinstallprompt", (event) => {
-            alert('install?')
-        })
+        // addEventListener("beforeinstallprompt", (event) => {
+        //     alert('install?')
+        // })
+
+
 
 
     </script>

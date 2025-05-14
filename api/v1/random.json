@@ -1,14 +1,15 @@
 {
     "quotes": [
-        "<blockquote>There is always one more bug to fix.<cite>Ellen Ullman<\/cite><\/cite><\/blockquote>",
-        "<blockquote>If debugging is the process of removing bugs,then programming must be the process of putting them in.<cite>Sam Redwine<\/cite> <\/blockquote>",
-        "<blockquote>There is always one more bug to fix.<cite>Ellen Ullman<\/cite><\/blockquote>",
-        "<blockquote>Talk is cheap. Show me the code.<cite>Linus Torvalds<\/cite><\/blockquote>",
-        "<blockquote>Java is to JavaScript what car is to Carpet.<cite>Chris Heilmann<\/cite><\/blockquote>",
-        "<blockquote>Any fool can write code that a computer can understand.\nGood programmers write code that humans can understand.<cite>Martin Fowler<\/cite><\/blockquote>",
-        "<blockquote>Before software can be reusable it first has to be usable.<cite>Ralph Johnson<\/cite><\/blockquote>",
-        "<blockquote>Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.<cite>John Wood<\/cite><\/blockquote>",
-        "<blockquote>Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.<cite>Linus Torvalds<\/cite><\/blockquote>",
-        "<blockquote>When I wrote this code, only God and I understood what I did. Now only God knows.<cite>Anonymous<\/cite><\/blockquote>"
+        {"text": "There is always one more bug to fix.", "author": "Ellen Ullman"},
+        {"text": "There is always one more bug to fix.", "author":"Ellen Ullman"},
+        {"text": "If debugging is the process of removing bugs,then programming must be the process of putting them in.", "author":"Sam Redwine"},
+        {"text": "There is always one more bug to fix.", "author":"Ellen Ullman"},
+        {"text": "Talk is cheap. Show me the code.", "author":"Linus Torvalds"},
+        {"text": "Java is to JavaScript what car is to Carpet.", "author":"Chris Heilmann"},
+        {"text": "Any fool can write code that a computer can understand.\nGood programmers write code that humans can understand.", "author":"Martin Fowler"},
+        {"text": "Before software can be reusable it first has to be usable.", "author":"Ralph Johnson"},
+        {"text": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.", "author":"John Wood"},
+        {"text": "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.", "author":"Linus Torvalds"},
+        {"text": "When I wrote this code, only God and I understood what I did. Now only God knows.", "author":"Anonymous"}
     ]
 }
