@@ -64,7 +64,7 @@ class BitTimerSlice
      * URL to an audio file. Will be played at slice startup
      * @type {string}
      */
-    audioFile = "/assets/audio/simple-notification.mp3"
+    audioFile = "assets/audio/simple-notification.mp3"
 
 }
 
