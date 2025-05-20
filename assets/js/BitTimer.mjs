@@ -1,6 +1,7 @@
 "use strict";
 
 import {RandomQuote} from "./RandomQuote.mjs";
+import {Time} from "./Time.mjs";
 
 class BitConfig{
 
@@ -35,11 +36,24 @@ class BitConfig{
      */
     sequence = [];
 
+    /**
+     * Whether sound is played or not
+     * @type {boolean}
+     */
+    playSound = false;
+
 }
 
 
 class BitTimerSlice
 {
+
+    /**
+     *
+     * @type {Time}
+     */
+    startTime = new Time("00:00:00");
+
     /**
      * The time in minutes of the slice, defaults to 25
      * @type {number}
@@ -77,6 +91,11 @@ class BitTimerSlice
 class BitTimer
 {
 
+    /**
+     * Whether to play sounds
+     * @type {boolean}
+     */
+    playSound = true;
 
     /**
      * Internal copy of the current timer config
@@ -117,11 +136,24 @@ class BitTimer
         this.startHour = this.#_config.startHour ?? 9;
         this.startMinute = this.#_config.startMinute ?? 30;
         this.sequenceTotal = 0;
+        let prevSlice = null;
         this.sequence.forEach(slice => {
-            this.sequenceTotal += slice.duration * 60;
+
+            if (typeof slice.startTime === 'string') {
+
+                slice.startTime = new Time(slice.startTime);
+                if (prevSlice) {
+                    prevSlice.duration = Math.round(Time.diff(prevSlice.startTime, slice.startTime).toInteger() / 60)
+                    this.sequenceTotal += Math.round(prevSlice.duration * 60);
+                } else {
+                    slice.duration = 0
+                }
+                prevSlice = slice;
+            }
+
         })
         this.currentSliceIndex = -1;
-        console.debug("Total time of the sequence = ", this.sequenceTotal, "s. = ", this.sequenceTotal / 60 , " m. = ", this.sequenceTotal / 60 / 60, " h.");
+        console.debug("Total time of the sequence = ", this.sequenceTotal, "s. = ", Math.round(this.sequenceTotal / 60) , " m. = ", Math.round(this.sequenceTotal / 60 / 60), " h.");
     }
 
     start() {
@@ -168,13 +200,17 @@ class BitTimer
                 if (this.currentSliceIndex < sliceIndex ) {
                     this.currentSliceIndex = sliceIndex;
                     console.debug(`New Slice Index ${this.currentSliceIndex}`);
+                    console.debug("- Audio", this.sequence[sliceIndex].audioFile)
+                    console.debug("- Play sound", this.playSound)
                     if (this.sequence[sliceIndex].audioFile) {
-                        const audio = new Audio(this.sequence[sliceIndex].audioFile);
-                        audio.play().then(() => {
-                            console.debug('Audio played')
-                        }).catch(error => {
-                            console.debug("Failed to play audio:", error.message)
-                        });
+                        if (this.playSound) {
+                            const audio = new Audio(this.sequence[sliceIndex].audioFile);
+                            audio.play().then(() => {
+                                console.debug('- Audio played')
+                            }).catch(error => {
+                                console.debug("- Failed to play audio:", error.message)
+                            });
+                        }
                     }
 
                     let sliceType = 'Unknown Slice Type'
@@ -189,12 +225,11 @@ class BitTimer
                     this.timeMessageElement.innerHTML = `
                          <h2>${sliceType}</h2>
                          <p class="small" ><strong>slice:</strong> ${sliceIndex + 1}/ ${this.sequence.length},<br> 
-                          <strong>duration:</strong> ${this.sequence[sliceIndex].duration} m./ ${this.sequenceTotal / 60} m. </p>`;
+                          <strong>duration:</strong> ${this.sequence[sliceIndex].duration} m./ ${Math.round(this.sequenceTotal / 60)} m. </p>`;
 
                     if (this.sequence[sliceIndex].message === '') {
                         console.log('adding random quote');
                         RandomQuote().then(q =>  this.timeMessageElement.innerHTML += `<blockquote>${q.text}<cite>${q.author}</cite></blockquote>` )
-
 
                     } else {
                         this.timeMessageElement.innerHTML +=  this.sequence[sliceIndex].message;

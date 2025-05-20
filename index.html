@@ -26,8 +26,12 @@
 
 </head>
 <body>
+<!-- <img id="logo" src="assets/images/icon-32x32.png" alt="logo"> -->
     <header>
-        <h1><img id="logo" src="assets/images/icon-32x32.png" alt="logo"> A Bit of Focus</h1>
+        <h1>
+            <sound-toggler audio="/assets/audio/simple-notification.mp3"></sound-toggler>
+             A Bit of Focus
+        </h1>
         <p id="currentDate"></p>
     </header>
 
@@ -38,50 +42,63 @@
 
     <footer>
         &copy; copyright 2024
-
     </footer>
 
-<!--    <script src="assets/js/app.js"></script>-->
     <script type="module">
         import BitTimer from "./assets/js/BitTimer.mjs";
         import RandomQuoteElement from "./assets/js/RandomQuote.mjs";
+        import SoundTogglerElement from "./assets/js/SoundToggler.mjs";
 
         customElements.define("random-quote", RandomQuoteElement );
+        customElements.define("sound-toggler", SoundTogglerElement );
 
-        fetch('api/v1/config.json').then((result) => {
-            result.json().then((config) => {
-                console.debug( config );
-                const CLOCK = new BitTimer(config);
-                CLOCK.start();
-            }).catch(error => {
-                console.debug("Parsing error", error);
-            });
-        }).catch(error => {
-            console.debug("Failed to fetch", error);
-        });
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function() {
+                navigator.serviceWorker
+                    .register("/serviceWorker.js")
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                        // registration.unregister()
+                        //     .then((unregister) => {
+                        //             if (unregister) {
+                        //                 console.log("Unregister serviceworker successful")
+                        //             }
+                        //         }
+                        //     )
+                    })
+                    .catch(error => console.error(`Registration serviceworker failed with ${error}`))
+            })
+        }
+
+
+
 
         document.addEventListener('DOMContentLoaded', (event) => {
             const dateElement = document.getElementById('currentDate');
             const toDay = new Date()
             dateElement.innerHTML = toDay.toDateString();
 
-            const logo = document.getElementById("logo")
-            logo.addEventListener("click", event => {
-                const audio = new Audio('assets/audio/simple-notification.mp3');
-                audio.play().then(() => {
-                    console.debug('Audio Enabled')
+            fetch('api/v1/config-deep-dive.json').then((result) => {
+                result.json().then((config) => {
+                    console.debug( config );
+                    const CLOCK = new BitTimer(config);
+                    CLOCK.start();
+                    document.addEventListener('sound-toggler', (event) => {
+                        CLOCK.playSound =  event.detail;
+                        console.log('Audio enabled: ', event.detail,  CLOCK.playSound)
+                    })
                 }).catch(error => {
-                    console.debug("Failed to play audio:", error.message)
+                    console.debug("Parsing error", error);
                 });
-            })
+            }).catch(error => {
+                console.debug("Failed to fetch", error);
+            });
+
         })
 
         // addEventListener("beforeinstallprompt", (event) => {
         //     alert('install?')
         // })
-
-
-
 
     </script>
 

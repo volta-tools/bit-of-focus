@@ -1,18 +1,36 @@
 {
+
   "name": "Bit Academy Focus Timer",
+  "description": "Configurable Pomodoro timer",
   "short_name": "Bit Focus",
   "author": "Rob Demmenie",
   "version": "0.1.0",
   "version_name": "Elizabeth",
+  "id" : "/",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#252525",
   "theme_color": "#ffaa00",
   "orientation": "portrait-primary",
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1256x712",
+      "type": "image/png",
+      "purpose": "any",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "421x677",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
   "icons": [
     {
       "src": "/assets/images/icon-32x32.png",
-      "type": "image/png", "sizes": "72x72"
+      "type": "image/png", "sizes": "32x32"
     },
     {
       "src": "/assets/images/icon-72x72.png",

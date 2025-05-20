@@ -1,0 +1,40 @@
+{
+    "startHour": 9,
+    "startMinute": 0,
+    "startMessage": "Dagstart",
+    "endMessage" : "stopped",
+    "sequence": [
+        { "startTime": "09:00", "message": "Dagstart", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "09:30", "message": "Focus", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "10:00", "message": "Relax", "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "10:05", "message": "Focus", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "10:30", "message": "Relax", "type":2, "audioFile": "/assets/audio/simple-notification.mp3" },
+        { "startTime": "10:35", "message": "Focus", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "11:00", "message": "Pauze", "type":3, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "11:15", "message": "Focus", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "11:50", "message": "Relax", "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "11:55", "message": "Focus", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "12:30", "message": "Eat, go out<img src=\"/assets/images/funny-skeleton-eating-deadly-junk-food.jpg\">", "type":4, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "13:15", "message": "Focus", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "13:50", "message": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "13:55", "message": "Focus", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "startTime": "14:30", "message": "Pauze", "type":3 , "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "startTime": "14:45", "message": "Focus", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "14:20", "message": "Relax",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "14:25", "message": "Focus", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "startTime": "15:00", "message": "Short Break 2",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "15:15", "message": "Focus", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "startTime": "15:45", "message": "Relax", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime": "16:00", "message": "Focus", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "startTime": "16:30", "message": "Dag Einde", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+
+        { "startTime": "17:00", "message": "Done", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"}
+
+
+    ]
+}
