@@ -8,43 +8,43 @@
         { "startTime":  "08:30",
             "message": "Pending, Start at 9:30<iframe src=\"https://giphy.com/embed/HLB0nLA36GCCo6JuB5\" width=\"480\" height=\"480\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p><a href=\"https://giphy.com/gifs/scaler-official-funny-cartoon-coding-HLB0nLA36GCCo6JuB5\">via GIPHY</a></p>",
             "type":0,
-            "audioFile": "/assets/audio/simple-notification.mp3"
+            "audioFile": "assets/audio/simple-notification.mp3"
         },
 
-        { "startTime":  "09:30", "message": "", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "09:55", "message": "", "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "10:00", "message": "", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "10:30", "message": "", "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "10:35", "message": "", "type":1, "audioFile": "/assets/audio/simple-notification.mp3" },
+        { "startTime":  "09:30", "message": "", "type":1, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "09:55", "message": "", "type":2, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "10:00", "message": "", "type":1, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "10:30", "message": "", "type":2, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "10:35", "message": "", "type":1, "audioFile": "assets/audio/simple-notification.mp3" },
 
-        { "startTime":  "11:00", "message": "",  "type":3, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime":  "11:00", "message": "",  "type":3, "audioFile": "assets/audio/simple-notification.mp3"},
 
-        { "startTime":  "11:15", "message": "", "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "11:50", "message": "",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "11:55", "message": "",  "type":1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime":  "11:15", "message": "", "type":1, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "11:50", "message": "",  "type":2, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "11:55", "message": "",  "type":1, "audioFile": "assets/audio/simple-notification.mp3"},
 
-        { "startTime":  "12:30", "message": "Eat, go out<img src=\"/assets/images/funny-skeleton-eating-deadly-junk-food.jpg\">", "type":4, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime":  "12:30", "message": "Eat, go out<img src=\"assets/images/funny-skeleton-eating-deadly-junk-food.jpg\">", "type":4, "audioFile": "assets/audio/simple-notification.mp3"},
 
-        { "startTime":  "13:15", "message": "", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "13:50", "message": "",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "13:55", "message": "", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime":  "13:15", "message": "", "type": 1, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "13:50", "message": "",  "type":2, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "13:55", "message": "", "type": 1, "audioFile": "assets/audio/simple-notification.mp3"},
 
-        { "startTime":  "14:30", "message": "Short Break 2",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime":  "14:30", "message": "Short Break 2",  "type":2, "audioFile": "assets/audio/simple-notification.mp3"},
 
-        { "startTime":  "14:45", "message": "", "type": 1, "audioFile": "/assets/audio/simple-notification.mp3"},
-        { "startTime":  "15:15", "message": "",  "type":2, "audioFile": "/assets/audio/simple-notification.mp3"},
+        { "startTime":  "14:45", "message": "", "type": 1, "audioFile": "assets/audio/simple-notification.mp3"},
+        { "startTime":  "15:15", "message": "",  "type":2, "audioFile": "assets/audio/simple-notification.mp3"},
         { "startTime":  "15:20",
             "message": "Laatste FOCUSSSSS<iframe src=\"https://giphy.com/embed/yYSSBtDgbbRzq\" width=\"480\" height=\"360\" frameBorder=\"0\" ></iframe><p><a href=\"https:\/\/giphy.com/gifs/frustrated-annoyed-programming-yYSSBtDgbbRzq\">via GIPHY</a></p>",
             "type": 1,
-            "audioFile": "/assets/audio/simple-notification.mp3"
+            "audioFile": "assets/audio/simple-notification.mp3"
         },
         { "startTime":  "15:50",
             "message": "TOP!  GOED GEWERKT! Tot Morgen! <iframe src=\"https://giphy.com/embed/yYSSBtDgbbRzq\" width=\"480\" height=\"360\" frameBorder=\"0\" ></iframe><p><a href=\"https://giphy.com/gifs/frustrated-annoyed-programming-yYSSBtDgbbRzq\">via GIPHY</a></p>",
             "type":0,
-            "audioFile": "/assets/audio/simple-notification.mp3"
+            "audioFile": "assets/audio/simple-notification.mp3"
         },
 
-        { "startTime":  "17:00", "message": "",  "type":0, "audioFile": "/assets/audio/simple-notification.mp3"}
+        { "startTime":  "17:00", "message": "",  "type":0, "audioFile": "assets/audio/simple-notification.mp3"}
 
     ]
 }

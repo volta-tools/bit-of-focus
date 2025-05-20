@@ -29,7 +29,7 @@
 <!-- <img id="logo" src="assets/images/icon-32x32.png" alt="logo"> -->
     <header>
         <h1>
-            <sound-toggler audio="/assets/audio/simple-notification.mp3"></sound-toggler>
+            <sound-toggler audio="assets/audio/simple-notification.mp3"></sound-toggler>
              A Bit of Focus
         </h1>
         <p id="currentDate"></p>
@@ -58,13 +58,6 @@
                     .register("/serviceWorker.js")
                     .then(registration => {
                         console.log('Service Worker registered with scope:', registration.scope);
-                        // registration.unregister()
-                        //     .then((unregister) => {
-                        //             if (unregister) {
-                        //                 console.log("Unregister serviceworker successful")
-                        //             }
-                        //         }
-                        //     )
                     })
                     .catch(error => console.error(`Registration serviceworker failed with ${error}`))
             })
@@ -96,9 +89,7 @@
 
         })
 
-        // addEventListener("beforeinstallprompt", (event) => {
-        //     alert('install?')
-        // })
+
 
     </script>
 
